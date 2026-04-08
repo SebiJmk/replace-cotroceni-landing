@@ -20,18 +20,22 @@ const Header = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-10">
-          <a href="#meniu" className="text-xs font-heading font-semibold uppercase tracking-[0.15em] text-foreground hover:text-accent transition-colors">
-            Meniu
-          </a>
-          <a href="#povestea" className="text-xs font-heading font-semibold uppercase tracking-[0.15em] text-foreground hover:text-accent transition-colors">
-            Povestea Noastră
-          </a>
-          <a href="#contact" className="text-xs font-heading font-semibold uppercase tracking-[0.15em] text-foreground hover:text-accent transition-colors">
-            Contact
-          </a>
+          {[
+            { href: "#meniu", label: "Meniu" },
+            { href: "#povestea", label: "Povestea Noastră" },
+            { href: "#contact", label: "Contact" },
+          ].map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-xs font-heading font-semibold uppercase tracking-[0.15em] text-foreground bg-background px-3 py-1.5 border border-transparent hover:bg-foreground hover:text-background transition-all duration-0"
+            >
+              {link.label}
+            </a>
+          ))}
           <a
             href="#contact"
-            className="ml-4 px-6 py-2.5 bg-primary text-primary-foreground text-xs font-heading font-semibold uppercase tracking-[0.15em] rounded-full hover:opacity-80 transition-opacity"
+            className="ml-4 px-6 py-2.5 bg-foreground text-background text-xs font-heading font-semibold uppercase tracking-[0.15em] rounded-full hover:bg-background hover:text-foreground border border-foreground transition-all duration-0"
           >
             Rezervă o masă
           </a>
@@ -50,19 +54,24 @@ const Header = () => {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-background border-t border-border px-6 py-8 flex flex-col gap-6">
-          <a href="#meniu" onClick={() => setMenuOpen(false)} className="text-sm font-heading font-semibold uppercase tracking-[0.15em] text-foreground">
-            Meniu
-          </a>
-          <a href="#povestea" onClick={() => setMenuOpen(false)} className="text-sm font-heading font-semibold uppercase tracking-[0.15em] text-foreground">
-            Povestea Noastră
-          </a>
-          <a href="#contact" onClick={() => setMenuOpen(false)} className="text-sm font-heading font-semibold uppercase tracking-[0.15em] text-foreground">
-            Contact
-          </a>
+          {[
+            { href: "#meniu", label: "Meniu" },
+            { href: "#povestea", label: "Povestea Noastră" },
+            { href: "#contact", label: "Contact" },
+          ].map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className="text-sm font-heading font-semibold uppercase tracking-[0.15em] text-foreground"
+            >
+              {link.label}
+            </a>
+          ))}
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="px-6 py-3 bg-primary text-primary-foreground text-sm font-heading font-semibold uppercase tracking-[0.15em] rounded-full text-center"
+            className="px-6 py-3 bg-foreground text-background text-sm font-heading font-semibold uppercase tracking-[0.15em] rounded-full text-center border border-foreground"
           >
             Rezervă o masă
           </a>

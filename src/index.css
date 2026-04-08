@@ -88,6 +88,11 @@
   }
 }
 
+@keyframes glitch-line {
+  0% { transform: translateX(-2%); opacity: 0.3; }
+  100% { transform: translateX(2%); opacity: 0.8; }
+}
+
 html {
   scroll-behavior: smooth;
 }

@@ -20,10 +20,10 @@ const AboutSection = () => {
           </div>
 
           <div>
-            <p className="font-serif italic text-accent text-sm tracking-wide mb-3">
+            <h3 className="font-serif italic text-accent text-sm tracking-wide mb-3">
               Povestea noastră
-            </p>
-            <h2 className="font-heading text-3xl md:text-4xl font-black uppercase tracking-tight text-foreground mb-8">
+            </h3>
+            <h2 className="font-heading text-3xl md:text-4xl font-black uppercase tracking-tighter text-foreground mb-8">
               Cotroceni Mood
             </h2>
             <p className="text-sm md:text-base text-muted-foreground leading-[1.8] tracking-wide mb-6">

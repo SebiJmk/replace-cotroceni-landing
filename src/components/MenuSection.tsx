@@ -34,7 +34,7 @@ const MenuSection = () => {
           <p className="font-serif italic text-accent text-sm md:text-base tracking-wide mb-3">
             Selecția noastră
           </p>
-          <h2 className="font-heading text-3xl md:text-5xl font-black uppercase tracking-tight text-foreground">
+          <h2 className="font-heading text-3xl md:text-5xl font-black uppercase tracking-tighter text-foreground">
             Selecția Brunch Club
           </h2>
         </div>
@@ -42,7 +42,7 @@ const MenuSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {items.map((item) => (
             <div key={item.title} className="group">
-              <div className="aspect-square overflow-hidden mb-6">
+              <div className="aspect-square overflow-hidden mb-6 rounded-lg">
                 <img
                   src={item.image}
                   alt={item.title}
