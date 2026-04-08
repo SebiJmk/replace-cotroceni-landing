@@ -5,9 +5,8 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-        {/* Logo */}
+    <header className="sticky top-0 z-50 bg-background/60 backdrop-blur-md border-b border-border/30">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" className="flex flex-col items-start leading-none">
           <span className="font-heading text-2xl font-black tracking-tight uppercase text-foreground">
             replace
@@ -18,7 +17,6 @@ const Header = () => {
           </span>
         </a>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {[
             { href: "#meniu", label: "Meniu" },
@@ -41,7 +39,6 @@ const Header = () => {
           </a>
         </nav>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden text-foreground"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -51,7 +48,6 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-background border-t border-border px-6 py-8 flex flex-col gap-6">
           {[
