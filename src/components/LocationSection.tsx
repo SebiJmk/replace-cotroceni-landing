@@ -1,8 +1,10 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { MapPin, Clock } from "lucide-react";
+import { useState } from "react";
 
 const LocationSection = () => {
   const ref = useScrollReveal();
+  const [mapHover, setMapHover] = useState(false);
 
   return (
     <section id="contact" className="py-24 md:py-32 bg-background">
@@ -11,7 +13,7 @@ const LocationSection = () => {
           <p className="font-serif italic text-accent text-sm tracking-wide mb-3">
             Unde ne găsești
           </p>
-          <h2 className="font-heading text-3xl md:text-5xl font-black uppercase tracking-tight text-foreground">
+          <h2 className="font-heading text-3xl md:text-5xl font-black uppercase tracking-tighter text-foreground">
             Vizitează-ne în Cotroceni
           </h2>
         </div>
@@ -27,7 +29,7 @@ const LocationSection = () => {
                 <p className="text-sm text-muted-foreground tracking-wide leading-relaxed">
                   Strada Nicolae Paulescu 61,
                   <br />
-                  București, România
+                  București, România (Zona Cotroceni)
                 </p>
               </div>
             </div>
@@ -52,17 +54,46 @@ const LocationSection = () => {
             </div>
           </div>
 
-          <div className="h-[350px] md:h-[400px]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2849.3!2d26.07!3d44.43!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDI1JzQ4LjAiTiAyNsKwMDQnMTIuMCJF!5e0!3m2!1sen!2sro!4v1"
-              width="100%"
-              height="100%"
-              style={{ border: 0, filter: "grayscale(100%)" }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Replace Cotroceni location"
-            />
+          {/* Premium Map Container */}
+          <div
+            className="relative h-[350px] md:h-[400px] group"
+            onMouseEnter={() => setMapHover(true)}
+            onMouseLeave={() => setMapHover(false)}
+          >
+            <div
+              className={`w-full h-full transition-all duration-500 ease-out ${
+                mapHover
+                  ? "scale-[1.03] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.35)]"
+                  : "scale-100 shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)]"
+              }`}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2849.3!2d26.07!3d44.43!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDI1JzQ4LjAiTiAyNsKwMDQnMTIuMCJF!5e0!3m2!1sen!2sro!4v1"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: "grayscale(100%)" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Replace Cotroceni location"
+              />
+            </div>
+
+            {/* Hover overlay with CTA */}
+            <div
+              className={`absolute inset-0 flex items-center justify-center bg-foreground/20 backdrop-blur-[2px] transition-opacity duration-300 ${
+                mapHover ? "opacity-100" : "opacity-0 pointer-events-none"
+              }`}
+            >
+              <a
+                href="https://maps.google.com/?q=Strada+Nicolae+Paulescu+61+Bucuresti"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 bg-foreground text-background text-xs font-heading font-bold uppercase tracking-[0.2em] rounded-full hover:bg-background hover:text-foreground border border-background transition-none"
+              >
+                Vezi Harta
+              </a>
+            </div>
           </div>
         </div>
       </div>
