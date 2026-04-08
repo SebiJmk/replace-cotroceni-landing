@@ -8,7 +8,7 @@ const CustomCursor = () => {
     if (!cursor) return;
 
     const move = (e: MouseEvent) => {
-      cursor.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
+      cursor.style.transform = `translate(${e.clientX - 13}px, ${e.clientY - 13}px)`;
     };
 
     window.addEventListener("mousemove", move);
@@ -18,8 +18,10 @@ const CustomCursor = () => {
   return (
     <div
       ref={cursorRef}
-      className="fixed top-0 left-0 w-10 h-10 rounded-full pointer-events-none z-[200] hidden md:block"
+      className="fixed top-0 left-0 rounded-full pointer-events-none z-[200] hidden md:block"
       style={{
+        width: 26,
+        height: 26,
         background: "white",
         mixBlendMode: "difference",
         willChange: "transform",
