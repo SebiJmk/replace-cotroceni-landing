@@ -40,18 +40,14 @@ const LocationSection = () => {
               <h3 className="font-heading text-sm font-bold uppercase tracking-[0.15em] text-foreground mb-2">
                 Program
               </h3>
-              <div className="space-y-1">
-                <div className="flex justify-between text-sm text-muted-foreground tracking-wide max-w-[260px]">
-                  <span>Luni – Vineri</span>
-                  <span>09:00 – 18:00</span>
+              <div className="space-y-2 w-full min-w-[280px] max-w-[300px]">
+                <div className="flex justify-between items-center text-sm text-muted-foreground tracking-wide">
+                  <span className="whitespace-nowrap">Luni – Vineri</span>
+                  <span className="whitespace-nowrap">09:00 – 18:00</span>
                 </div>
-                <div className="flex justify-between text-sm text-muted-foreground tracking-wide max-w-[260px]">
-                  <span>Sâmbătă –</span>
-                  <span>09:00 –</span>
-                </div>
-                <div className="flex justify-between text-sm text-muted-foreground tracking-wide max-w-[260px]">
-                  <span>Duminică</span>
-                  <span>19:00</span>
+                <div className="flex justify-between items-center text-sm text-muted-foreground tracking-wide">
+                  <span className="whitespace-nowrap">Sâmbătă – Duminică</span>
+                  <span className="whitespace-nowrap">09:00 – 19:00</span>
                 </div>
               </div>
             </div>
