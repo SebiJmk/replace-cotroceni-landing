@@ -47,7 +47,7 @@ const LocationSection = () => {
                 </div>
                 <div className="flex justify-between text-sm text-muted-foreground tracking-wide max-w-[260px]">
                   <span>Sâmbătă – Duminică</span>
-                  <span>09:00 – 19:00</span>
+                  <span className="ml-4">09:00 – 19:00</span>
                 </div>
               </div>
             </div>
