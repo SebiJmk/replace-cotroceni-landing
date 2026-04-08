@@ -5,8 +5,8 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="absolute top-0 left-0 right-0 z-50">
+      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex flex-col items-start leading-none">
           <span className="font-heading text-2xl font-black tracking-tight uppercase text-foreground">
@@ -19,7 +19,7 @@ const Header = () => {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden md:flex items-center gap-8">
           {[
             { href: "#meniu", label: "Meniu" },
             { href: "#povestea", label: "Povestea Noastră" },
@@ -28,14 +28,14 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-xs font-heading font-semibold uppercase tracking-[0.15em] text-foreground bg-background px-3 py-1.5 border border-transparent hover:bg-foreground hover:text-background transition-all duration-0"
+              className="text-xs font-heading font-bold uppercase tracking-[0.15em] text-foreground px-3 py-1.5 hover:bg-foreground hover:text-background transition-none"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="ml-4 px-6 py-2.5 bg-foreground text-background text-xs font-heading font-semibold uppercase tracking-[0.15em] rounded-full hover:bg-background hover:text-foreground border border-foreground transition-all duration-0"
+            className="ml-2 px-6 py-2.5 bg-foreground text-background text-xs font-heading font-bold uppercase tracking-[0.15em] rounded-full hover:bg-background hover:text-foreground border border-foreground transition-none"
           >
             Rezervă o masă
           </a>
@@ -63,7 +63,7 @@ const Header = () => {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-sm font-heading font-semibold uppercase tracking-[0.15em] text-foreground"
+              className="text-sm font-heading font-bold uppercase tracking-[0.15em] text-foreground"
             >
               {link.label}
             </a>
@@ -71,7 +71,7 @@ const Header = () => {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="px-6 py-3 bg-foreground text-background text-sm font-heading font-semibold uppercase tracking-[0.15em] rounded-full text-center border border-foreground"
+            className="px-6 py-3 bg-foreground text-background text-sm font-heading font-bold uppercase tracking-[0.15em] rounded-full text-center border border-foreground"
           >
             Rezervă o masă
           </a>
