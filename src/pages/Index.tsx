@@ -2,7 +2,6 @@ import { useState, useCallback } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import MenuSection from "@/components/MenuSection";
-import DrinksSection from "@/components/DrinksSection";
 import AboutSection from "@/components/AboutSection";
 import LocationSection from "@/components/LocationSection";
 import Footer from "@/components/Footer";
@@ -20,7 +19,6 @@ const Index = () => {
       <Header />
       <HeroSection />
       <MenuSection />
-      <DrinksSection />
       <AboutSection />
       <LocationSection />
       <Footer />
